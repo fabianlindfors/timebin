@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "dev": "esbuild app.jsx --bundle --minify --sourcemap --target=chrome67,firefox68,safari14,edge79 --outfile=dist/scripts/out.js --watch"
+    "dev": "esbuild app.jsx --bundle --minify --sourcemap --target=chrome67,firefox68,safari14,edge79 --outfile=dist/build/out.js --watch"
   },
   "author": "",
   "license": "MIT",
