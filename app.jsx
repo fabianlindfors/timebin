@@ -166,8 +166,9 @@ function App() {
                       size="md"
                       type="datetime-local"
                       step={1}
-                      defaultValue={datetime.toISOString()}
+                      defaultValue={datetime.toISOString().slice(0, -5)}
                       onChange={handleDatetimeChange}
+                      onSelect={handleDatetimeChange}
                     />
                     <InputRightAddon>UTC</InputRightAddon>
                   </InputGroup>
