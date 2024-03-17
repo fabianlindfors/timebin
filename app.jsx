@@ -20,7 +20,6 @@ import {
   Icon,
   VStack,
   Spacer,
-  FormHelperText,
   Button,
   InputGroup,
   InputRightAddon,
