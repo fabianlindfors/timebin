@@ -58,6 +58,8 @@ function App() {
   const [ciphertext, setCiphertext] = React.useState("");
   const debouncedPlaintext = useDebouncedValue(plaintext, 500);
 
+  const currentUrl = new URL(window.location.href);
+
   const round = tlock.roundAt(
     datetime.getTime() * 1000,
     tlock.defaultChainInfo
@@ -65,9 +67,7 @@ function App() {
 
   const base64ciphertext = btoa(ciphertext);
   const url =
-    ciphertext === ""
-      ? ""
-      : `https://timebin.fabianlindfors.se/view#${base64ciphertext}`;
+    ciphertext === "" ? "" : `${currentUrl.origin}/view#${base64ciphertext}`;
 
   const handlePlaintextChange = (e) => {
     setPlaintext(e.target.value);
