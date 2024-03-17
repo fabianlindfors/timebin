@@ -2,7 +2,6 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import {
   ChakraProvider,
-  Box,
   Container,
   Textarea,
   Code,
