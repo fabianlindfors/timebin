@@ -24,7 +24,7 @@ export default function Create() {
   const [plaintext, setPlaintext] = React.useState("");
   const debouncedPlaintext = useDebouncedValue(plaintext, 500);
 
-  const [datetime, setDatetime] = React.useState(new Date());
+  const [datetime, setDatetime] = React.useState<number>(Date.now());
   const [ciphertext, setCiphertext] = React.useState("");
 
   const currentUrl = new URL(window.location.href);
@@ -37,10 +37,11 @@ export default function Create() {
     setPlaintext(e.target.value);
   };
 
+  console.log(datetime);
   const handleDatetimeChange = (e) => {
     const raw = e.target.value;
     try {
-      setDatetime(new Date(raw));
+      setDatetime(new Date(raw + ".000Z").getTime());
     } catch (e) {
       console.error("Invalid date", e);
     }
@@ -91,7 +92,7 @@ export default function Create() {
               size="md"
               type="datetime-local"
               step={1}
-              defaultValue={datetime.toISOString().slice(0, -5)}
+              defaultValue={new Date(datetime).toISOString().slice(0, -5)}
               onChange={handleDatetimeChange}
               onSelect={handleDatetimeChange}
             />
