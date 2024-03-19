@@ -12,6 +12,8 @@ import {
   Icon,
   VStack,
   Spacer,
+  Divider,
+  Show,
 } from "@chakra-ui/react";
 
 import { FaGithub } from "react-icons/fa";
@@ -89,6 +91,24 @@ export default function App() {
               <Icon as={FaGithub} /> Github
             </Link>{" "}
             and can be self-hosted!
+          </Text>
+
+          <Divider mt={4} mb={4} />
+
+          <Text color="gray.600">
+            Created by{" "}
+            <Link href="https://fabianlindfors.se" color="teal.500">
+              Fabian Linfors
+            </Link>{" "}
+            (
+            <Link href="mailto:fabian@flapplabs.se" color="teal.500">
+              don't be a stranger 👋
+            </Link>
+            ) – if you like this, check out{" "}
+            <Link href="https://reshapedb.com" color="teal.500">
+              ReshapeDB
+            </Link>
+            !
           </Text>
         </Stack>
       </Stack>
