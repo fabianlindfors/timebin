@@ -37,7 +37,6 @@ export default function Create() {
     setPlaintext(e.target.value);
   };
 
-  console.log(datetime);
   const handleDatetimeChange = (e) => {
     const raw = e.target.value;
     try {

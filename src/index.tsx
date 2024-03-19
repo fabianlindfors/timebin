@@ -15,6 +15,5 @@ function Root() {
 }
 
 const root = document.getElementById("root");
-console.log(root);
 
 ReactDOM.render(<Root />, root);
