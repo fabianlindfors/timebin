@@ -14,6 +14,7 @@ import {
   Spacer,
   Divider,
   Show,
+  Hide,
 } from "@chakra-ui/react";
 
 import { FaGithub } from "react-icons/fa";
@@ -40,40 +41,67 @@ export default function App() {
 
   return (
     <Container maxW="4xl" p={6}>
-      <Stack spacing={8}>
+      <Stack spacing={7}>
         <HStack>
-          <HStack spacing={3}>
-            <Icon as={TbClockBolt} boxSize={12} />
-            <VStack spacing={0} align="flex-start">
-              <Text fontSize="3xl" as="b" lineHeight={1}>
-                Timebin
-              </Text>
-              <Text fontSize="sm" fontWeight="medium" color="gray.600">
-                Share encrypted content that can only be decrypted at a certain
-                time
-              </Text>
-            </VStack>
-          </HStack>
-          <Spacer />
-          <Link
-            href="https://github.com/fabianlindfors/timebin"
-            color="teal.500"
-          >
-            <HStack>
-              <Icon as={FaGithub} boxSize={5} />
-              <Text fontSize="lg" as="b">
-                Github
-              </Text>
+          <Link href="/" _hover={{ textDecoration: "none" }}>
+            <HStack spacing={3}>
+              <Icon as={TbClockBolt} boxSize={12} />
+              <VStack spacing={1} align="flex-start">
+                <Text
+                  fontSize={{ base: "2xl", sm: "3xl" }}
+                  as="b"
+                  lineHeight={1}
+                >
+                  Timebin
+                </Text>
+                <Text
+                  fontSize={{ base: "sm", sm: "sm" }}
+                  fontWeight="medium"
+                  color="gray.600"
+                >
+                  Share encrypted content that can only be decrypted at a
+                  certain time{" "}
+                </Text>
+                <Hide above="sm">
+                  <Link
+                    href="https://github.com/fabianlindfors/timebin"
+                    color="teal.500"
+                  >
+                    <HStack>
+                      <Icon as={FaGithub} boxSize={4} />
+                      <Text fontSize="sm" as="b">
+                        Github
+                      </Text>
+                    </HStack>
+                  </Link>
+                </Hide>
+              </VStack>
             </HStack>
           </Link>
+          <Spacer />
+          <Show above="sm">
+            <Link
+              href="https://github.com/fabianlindfors/timebin"
+              color="teal.500"
+            >
+              <HStack>
+                <Icon as={FaGithub} boxSize={5} />
+                <Text fontSize="lg" as="b">
+                  Github
+                </Text>
+              </HStack>
+            </Link>
+          </Show>
         </HStack>
+
         <Card>
           <CardBody>{body}</CardBody>
         </Card>
+
         <Stack>
           <Text color="gray.600">
             How does it work? Timebin uses the{" "}
-            <Link href="https://drand.love" isExternal color="teal.500">
+            <Link href="https://drand.love" color="teal.500">
               drand
             </Link>{" "}
             distributed randomness network to derive an encryption key for the
