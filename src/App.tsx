@@ -59,8 +59,8 @@ export default function App() {
                   fontWeight="medium"
                   color="gray.600"
                 >
-                  Share encrypted content that can only be decrypted at a
-                  certain time{" "}
+                  Securely share encrypted content that can only be decrypted
+                  after a certain time
                 </Text>
                 <Hide above="sm">
                   <Link
@@ -104,9 +104,15 @@ export default function App() {
             <Link href="https://drand.love" color="teal.500">
               drand
             </Link>{" "}
-            distributed randomness network to derive an encryption key for the
-            time you specify. Once encrypted, the data can only be decrypted
-            after that time has passed as guaranteed by the network.
+            distributed randomness network and{" "}
+            <Link
+              href="https://drand.love/docs/timelock-encryption/"
+              color="teal.500"
+            >
+              time-lock encryption
+            </Link>{" "}
+            to ensure your encrypted data can only be decrypted after the time
+            you choose.
           </Text>
           <Text color="gray.600">
             Timebin is 100% client-side, encryption happens in your browser and
