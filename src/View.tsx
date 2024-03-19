@@ -1,6 +1,14 @@
 import * as React from "react";
 import { decrypt } from "./drand";
-import { Alert, AlertIcon, Code, Skeleton, Text } from "@chakra-ui/react";
+import {
+  Alert,
+  AlertIcon,
+  Box,
+  Code,
+  Link,
+  Skeleton,
+  Text,
+} from "@chakra-ui/react";
 
 export default function View() {
   const [plaintext, setPlaintext] = React.useState<string | undefined>(
@@ -33,18 +41,38 @@ export default function View() {
 
   if (error !== undefined) {
     return (
-      <Alert status="warning">
-        <AlertIcon />
-        {error}
-      </Alert>
+      <>
+        <Alert status="warning">
+          <AlertIcon />
+          {error}
+        </Alert>
+        <OtherText />
+      </>
     );
   }
 
   return (
-    <Code padding="15px" width="100%">
-      <pre style={{ whiteSpace: "pre-wrap" }}>
-        {plaintext === undefined ? <Skeleton>Loading...</Skeleton> : plaintext}
-      </pre>
-    </Code>
+    <>
+      <Code padding="15px" width="100%">
+        <pre style={{ whiteSpace: "pre-wrap" }}>
+          {plaintext === undefined ? (
+            <Skeleton>Loading...</Skeleton>
+          ) : (
+            plaintext
+          )}
+        </pre>
+      </Code>
+      <OtherText />
+    </>
+  );
+}
+
+function OtherText() {
+  return (
+    <Box mt={3}>
+      <Link href="/" color="teal.500">
+        Encrypt some other data &rarr;
+      </Link>
+    </Box>
   );
 }
