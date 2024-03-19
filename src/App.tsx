@@ -126,7 +126,7 @@ export default function App() {
           <Text color="gray.600">
             Created by{" "}
             <Link href="https://fabianlindfors.se" color="teal.500">
-              Fabian Linfors
+              Fabian Lindfors
             </Link>{" "}
             (
             <Link href="mailto:fabian@flapplabs.se" color="teal.500">
